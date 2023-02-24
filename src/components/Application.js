@@ -41,12 +41,7 @@ const appointments = [
   }
 ];
 
-const appointment = appointments.map((appt) => {
 
-  return (
-      <Appointment key={appt.id} {...appt} />
-    )
-}); 
 
 export default function Application(props) {
   // const [day, setDay] = useState([]);
