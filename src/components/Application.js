@@ -57,7 +57,7 @@ export default function Application(props) {
       })
       .catch(err => console.log(err))
   }, [])
-  
+
   return (
     <main className="layout">
       <section className="sidebar">
@@ -77,7 +77,8 @@ export default function Application(props) {
         />
       </section>
       <section className="schedule">
-        {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
+        {appointment}
+        <Appointment key="last" time="5pm" />
       </section>
     </main>
   );
