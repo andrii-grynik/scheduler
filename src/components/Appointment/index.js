@@ -52,7 +52,7 @@ export default function Appointment(props) {
       props.bookInterview(props.id, interview)
         .then(() => transition(SHOW))
         .catch(() => transition(ERROR_SAVE, true))
-    } else {
+    } else { // allows error to populate for whole interview block 
       transition(ERROR_SAVE, false)
     } 
   }
