@@ -25,9 +25,14 @@ export default function Form(props) {
 
   function validate() {
     if (currentName === "") {
-      setError("Student name cannot be blank")
+      setError("student name cannot be blank")
       return;
     }
+    // added clause to check for interwiever pick
+    if (currentInterviewer === null) {
+      setError("Please pick an interviewer")
+      return;
+    } 
     setError("")
     props.onSave(currentName, currentInterviewer);
   }

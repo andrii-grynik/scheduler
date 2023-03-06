@@ -11,26 +11,36 @@ const useVisualMode = (initial) => {
   // allows to transition to a new mode
   const transition = (newMode, replace = false) => {
     if (replace) {
-      setMode((prev) => newMode)
-      let replaceHistory = [...history];
-      replaceHistory[replaceHistory.length - 1] = mode;
-      setHistory((prev) => replaceHistory);
+      setMode(newMode)
+      
+      setHistory((prev) => {
+        let replaceHistory = [...prev];
+        replaceHistory[replaceHistory.length - 1] = mode;
+       return replaceHistory
+      });
+      
     } else {
-      setMode((prev) => newMode);
-      let newHistory = [...history];
-      newHistory.push(newMode);
-      setHistory((prev) => newHistory);
+      setMode(newMode);
+  
+      setHistory((prev) => {
+        let newHistory = [...prev];
+        newHistory.push(newMode);
+        return newHistory
+      });
     }
   };
 
   // allows to call back to return to previous mode
   const back = () => {
-     let newHistory = [...history];
-    newHistory.pop(mode);
-    setHistory((prev) => newHistory);
-    if (history.length > 1) {
-      setMode((prev) => newHistory[(newHistory.length - 1)]);
-    }
+    setHistory((prev) => { 
+      let replaceHistory = [...prev];
+      replaceHistory.pop()
+      if (replaceHistory.length >= 1) {
+        setMode(replaceHistory[(replaceHistory.length - 1)]);
+      }
+      return replaceHistory;
+    });
+    
   };
 
   return { mode, transition, back }

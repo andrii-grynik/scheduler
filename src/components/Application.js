@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 
 import "components/Application.scss";
 import DayList from "./DayList";
-import InterviewerList from "./InterviewerList";
+//import InterviewerList from "./InterviewerList";
 import Appointment from "components/Appointment";
 
-import { matchAppointments, getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
+import { /*matchAppointments,*/ getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 import useApplicationData from "hooks/useApplicationData";
 
 export default function Application(props) {
