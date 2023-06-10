@@ -26,7 +26,7 @@ Deleting/Canceling
 ![3](https://user-images.githubusercontent.com/95922075/222509848-d889b6e9-e4db-4e3a-8cf5-388ee0a6fc17.jpg)
 User can delete their appointment by pressing delete button and then confirm deleteion 
 
-Attention: For full functionality you have to run client and API server concurrently
+
 
 ## Installation
 npm install
@@ -70,15 +70,6 @@ Testing: Storybook, Webpack Dev Server, Jest, Testing Library and Cypress
 * Testing-library/react-hooks
 
 
-# API and DB Setup
-
-For full functionality both must run concurrently: the client and the API server applications.
-
-* Start by forking and cloning the scheduler-api server [here](https://github.com/lighthouse-labs/scheduler-api)
-* Follow the steps outlined in README to install and setup the database
-* Fork and clone this repo
-* Navigate to the root directory and install dependencies with npm install
-* Once you have the database setup and the scheduler-api server running, run the following command from the root directory of the project npm start
 
 
 
